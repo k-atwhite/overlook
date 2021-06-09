@@ -1,30 +1,76 @@
-# Webpack Starter Kit
+<h1 align="center"> Overlook </h1>
+<h3 align="center"> ituitive hotel booking software </h3>
 
-## Clone This Repo
+<!-- <p align="center"><img src=ADD GIF HERE></p> -->
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+1. [Contributors]()
+2. [Project Goals]()
+3. [Project Overview]()
+4. [How to use the app]()
+5. [Technologies Used]()
+6. [Future Additions]()
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+## Contributors
+- [🥗 Kat White 🥗](https://github.com/k-atwhite)
 
-## Setup
+## Project Goals
+- Use OOP to drive the design of the application and the code
+- Work with an API to send and receive data
+- Solidify the code review process
+- Create a robust test suite that thoroughly tests all functionality of a client-side application
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
 
-Then install the library dependencies. Run:
+## Project Overview
+What's cooking is our biggest project yet!
 
-```bash
-npm install
-```
+0️⃣ ITERATION: 
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
+1️⃣ ITERATION:  
 
-## Where to Add Your Code
+2️⃣ ITERATION: 
+
+3️⃣ ITERATION: 
+
+
+## How to use the app
+### Server Setup
+To set up the data server, run the following commands:  
+`git clone git@github.com:turingschool/What-s-cookin--starter-kit-API.git`  
+`cd What-s-cookin--starter-kit-API`  
+`npm install`  
+`npm start`  
+Then, open a new Terminal window
+
+### App Setup
+In the new Terminal window, run the following commands:  
+`git clone git@github.com:k-atwhite/whats-cookin.git`  
+`cd whats-cookin`  
+`npm install`  
+`npm start`  
+Open a window in your web browser of choice, and visit `localhost:8080` to view the app!
+
+
+## Technologies Used
+* Chai and Mocha
+* HTML
+* CSS
+* JavaScript
+* Webpack
+* ESLint
+
+
+## Future Additions
+There are so many ways to grow this site. Several examples could be:
+1. Add a Pantry: This addiction would add logic and functionality to determine whether a user's pantry has enough ingredients to cook a given meal. And what the user still needs to cook that mean!
+
+2. 3rd Party Library: Use a 3rd party library to improve user experience - especialy a carouselthat could rotate through recipes. Or an extension to improve our  modal.
+
+3. Rating System: Favoriting recipes is nice, but implementing a rating system would be even more helpful for a user! This could include a 5 star rating system and a way to leave reviews. 
+
+______________________________
+
+
 
 ### JavaScript
 

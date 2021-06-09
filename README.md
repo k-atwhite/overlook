@@ -1,4 +1,4 @@
-<h1 align="center"> 🧳 Overlook 🧳 </h1>
+<h1 align="center"> 🧳 Overlook - Hotel Booking App 🧳 </h1>
 
 <!-- <p align="center"><img src=ADD GIF HERE></p> -->
 

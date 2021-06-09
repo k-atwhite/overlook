@@ -2,7 +2,7 @@
 
 <!-- <p align="center"><img src=ADD GIF HERE></p> -->
 
-
+## Table of Contents
 1. [Contributors](https://github.com/k-atwhite/overlook/blob/main/README.md#contributors)
 2. [Project Goals](https://github.com/k-atwhite/overlook/blob/main/README.md#project-goals)
 3. [Project Overview](https://github.com/k-atwhite/overlook/blob/main/README.md#project-overview)

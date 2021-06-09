@@ -3,12 +3,12 @@
 <!-- <p align="center"><img src=ADD GIF HERE></p> -->
 
 
-1. [Contributors]()
-2. [Project Goals]()
-3. [Project Overview]()
-4. [How to use the app]()
-5. [Technologies Used]()
-6. [Future Additions]()
+1. [Contributors](https://github.com/k-atwhite/overlook/blob/main/README.md#contributors)
+2. [Project Goals](https://github.com/k-atwhite/overlook/blob/main/README.md#project-goals)
+3. [Project Overview](https://github.com/k-atwhite/overlook/blob/main/README.md#project-overview)
+4. [How to use the app](https://github.com/k-atwhite/overlook/blob/main/README.md#how-to-use-the-app)
+5. [Technologies Used](https://github.com/k-atwhite/overlook/blob/main/README.md#technologies-used)
+6. [Future Additions](https://github.com/k-atwhite/overlook/blob/main/README.md#future-additions)
 
 ## Contributors
 - [Kat White](https://github.com/k-atwhite)
@@ -63,11 +63,11 @@ Open a window in your web browser of choice, and visit `localhost:8080` to view 
 
 ## Future Additions
 There are so many ways to grow this site. Several examples could be:
-1.
+1. 3rd Party Libraries:
 
-2. 3rd Party Libraries:
+2. IDEA 2
 
-3. 
+3. IDEA 3
 
 ______________________________
 

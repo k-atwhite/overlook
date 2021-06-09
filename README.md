@@ -1,5 +1,4 @@
-<h1 align="center"> Overlook </h1>
-<h3 align="center"> ituitive hotel booking software </h3>
+<h1 align="center"> 🧳 Overlook 🧳 </h1>
 
 <!-- <p align="center"><img src=ADD GIF HERE></p> -->
 
@@ -12,7 +11,9 @@
 6. [Future Additions]()
 
 ## Contributors
-- [🥗 Kat White 🥗](https://github.com/k-atwhite)
+- [Kat White](https://github.com/k-atwhite)
+- [Lauren Kessell, Code Review]()
+- [, Project Manager]()
 
 ## Project Goals
 - Use OOP to drive the design of the application and the code
@@ -36,16 +37,16 @@ What's cooking is our biggest project yet!
 ## How to use the app
 ### Server Setup
 To set up the data server, run the following commands:  
-`git clone git@github.com:turingschool/What-s-cookin--starter-kit-API.git`  
-`cd What-s-cookin--starter-kit-API`  
+`git clone git@github.com:turingschool-examples/overlook-api.git`  
+`cd overlook-api`  
 `npm install`  
 `npm start`  
 Then, open a new Terminal window
 
 ### App Setup
 In the new Terminal window, run the following commands:  
-`git clone git@github.com:k-atwhite/whats-cookin.git`  
-`cd whats-cookin`  
+`git clone git@github.com:turingschool-examples/overlook-api.git`  
+`cd overlook`  
 `npm install`  
 `npm start`  
 Open a window in your web browser of choice, and visit `localhost:8080` to view the app!
@@ -62,11 +63,11 @@ Open a window in your web browser of choice, and visit `localhost:8080` to view 
 
 ## Future Additions
 There are so many ways to grow this site. Several examples could be:
-1. Add a Pantry: This addiction would add logic and functionality to determine whether a user's pantry has enough ingredients to cook a given meal. And what the user still needs to cook that mean!
+1.
 
-2. 3rd Party Library: Use a 3rd party library to improve user experience - especialy a carouselthat could rotate through recipes. Or an extension to improve our  modal.
+2. 3rd Party Libraries:
 
-3. Rating System: Favoriting recipes is nice, but implementing a rating system would be even more helpful for a user! This could include a 5 star rating system and a way to leave reviews. 
+3. 
 
 ______________________________
 

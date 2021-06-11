@@ -29,7 +29,7 @@ describe('Customer', function () {
         expect(customer.bookings).to.deep.equal([]);
     });
 
-    it('Should have an an expense counter that starts at 0', () => {
-        expect(customer.expense).to.equal(0);
+    it('Should have an a total expense counter that starts at 0', () => {
+        expect(customer.totalExpense).to.equal(0);
     });
 })

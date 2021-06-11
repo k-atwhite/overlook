@@ -6,12 +6,19 @@ class Customer {
         this.totalExpense = 0;
     };
 
-    addBooking = (reservationData) => {
-        this.bookings.push(reservationData)
+    addBooking = (bookingData) => {
+        if (bookingData.userID === this.id) {
+            this.bookings.push(bookingData)
+        }
     }
 
-    getExpense = () => {
-        
+    getExpense = (roomData) => {
+        return this.bookings.reduce((totalExpenditure, booking) => {
+            const matchedRoom = roomData.find(room => booking.roomNumber === room.number)
+            totalExpenditure += matchedRoom.costPerNight
+            this.totalExpense = Number(totalExpenditure.toFixed(2))
+            return totalExpenditure
+        }, 0)
     }
 };
 

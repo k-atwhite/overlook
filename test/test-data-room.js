@@ -1,26 +1,34 @@
 export const testDataRoom = [
     {
-        "number": 1,
-        "roomType": "residential suite",
+        "number": 12,
+        "roomType": "single room",
+        "bidet": false,
+        "bedSize": "twin",
+        "numBeds": 2,
+        "costPerNight": 172.09
+    },
+    {
+        "number": 9,
+        "roomType": "single room",
         "bidet": true,
         "bedSize": "queen",
         "numBeds": 1,
-        "costPerNight": 358.4
+        "costPerNight": 200.39
     },
     {
-        "number": 2,
-        "roomType": "suite",
+        "number": 22,
+        "roomType": "single room",
         "bidet": false,
         "bedSize": "full",
         "numBeds": 2,
-        "costPerNight": 477.38
+        "costPerNight": 350.31
     },
     {
-        "number": 3,
-        "roomType": "single room",
+        "number": 20,
+        "roomType": "residential suite",
         "bidet": false,
-        "bedSize": "king",
+        "bedSize": "queen",
         "numBeds": 1,
-        "costPerNight": 491.14
-    }
+        "costPerNight": 343.95
+    },
 ]

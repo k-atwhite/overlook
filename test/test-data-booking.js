@@ -21,24 +21,10 @@ export const testDataBooking = [
         "roomServiceCharges": []
     },
     {
-        "id": "5fwrgu4i7k55hl72h",
-        "userID": 1,
-        "date": "2020/02/22",
-        "roomNumber": 15,
-        "roomServiceCharges": []
-    },
-    {
-        "id": "5fwrgu4i7k55hl72q",
-        "userID": 1,
-        "date": "2020/01/19",
-        "roomNumber": 19,
-        "roomServiceCharges": []
-    },
-    {
-        "id": "5fwrgu4i7k55hl732",
-        "userID": 1,
-        "date": "2020/01/18",
-        "roomNumber": 15,
+        "id": "5fwrgu4i7k55hl733",
+        "userID": 32,
+        "date": "2020/01/11",
+        "roomNumber": 14,
         "roomServiceCharges": []
     }
 ]

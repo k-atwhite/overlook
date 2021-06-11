@@ -12,8 +12,8 @@
 
 ## Contributors
 - [Kat White](https://github.com/k-atwhite)
-- [Lauren Kessell, Code Review]()
-- [, Project Manager]()
+- [Lauren Kessell, Code Review](https://github.com/LKessell)
+- [Hannah Hudson, Project Manager](https://github.com/hannahhch)
 
 ## Project Goals
 - Use OOP to drive the design of the application and the code
@@ -22,15 +22,51 @@
 - Create a robust test suite that thoroughly tests all functionality of a client-side application
 
 
-## Project Overview
+## Project Overview & User Stories
 
-0️⃣ ITERATION: 
 
-1️⃣ ITERATION:  
 
-2️⃣ ITERATION: 
+0️⃣ ITERATION: Build Dashboard
+* As a customer:
+1. I should see a dashboard page that shows me:
+2. Any room bookings I have made (past or present/upcoming)
+3. The total amount I have spent on rooms
 
-3️⃣ ITERATION: 
+1️⃣ ITERATION: Customer Interaction
+* As a customer:
+1. I should be able to select a date for which I’d like to book a room for myself
+2. Upon selecting a date, I should be shown a list of room details for only rooms that are available on that date
+3. I should be able to filter the list of available rooms by their roomType property
+4. I should be able to select a room for booking
+5. In the event that no rooms are available for the date/roomType selected, display a message fiercely apologizing to the user and asking them to adjust their room search
+
+2️⃣ ITERATION: Login
+* When first arriving at the site, a user should be able to log in with a username and password.
+* As a customer:
+1. I should be able to login
+2. I will see a login page when I first visit the site
+3. I can log in with the following credentials:
+```username: customer50 (where 50 is the ID of the user)```
+```password: overlook2021```
+4. Upon successfully loggin in, I should see my dashboard.
+
+3️⃣ ITERATION: 4. Manager Interaction
+* The app now supports two different types of users. In addition to having a customer, you will now add a manager.
+* As a manager:
+1. I should be able to login
+2. I will see a login page when I first visit the site
+3. I can log in with the following credentials:
+```username: manager```
+```password: overlook2021```
+4. As a manager, upon logging in I should see a dashboard page that shows me:
+* Total Rooms Available for today’s date
+* Total revenue for today’s date
+* Percentage of rooms occupied for today’s date
+5. I should be able to search for any user by name and:
+6. View their name, a list of all of their bookings, and the total amount they’ve spent
+7. Add a room booking for that user
+8. Delete any upcoming room bookings for that user (they cannot delete a booking from the past)
+
 
 
 ## How to use the app

@@ -23,7 +23,6 @@
 
 
 ## Project Overview
-What's cooking is our biggest project yet!
 
 0️⃣ ITERATION: 
 

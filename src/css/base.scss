@@ -11,34 +11,19 @@ html {
   background-size: cover;
 }
 
-// header {
-//   display: flex;
-// }
+.header-wrapper {
+  float: right;
+}
 
 h1 {
-  float: right;
   font-size: 450%;
-  font-weight: lighter;
+  // THIS IS MAKING IT GO TO TWO LINES!!!!
+  // margin: 2% 3%;
 }
 
 p {
-  float: right;
+  position: relative;
   font-size: 175%;
-  margin-right: 10%;
-}
-
-.header-wrapper {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: flex-end;
-  margin-top: 3%;
-  margin-right: 6%;
-}
-
-.tag-line {
-  display: grid;
-  flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .customer-details {
@@ -51,6 +36,7 @@ p {
 
 
 .book-button{
+  margin: 1.5% 3%;
   padding: 1% 2%;
   font-size: 200%;
   // touch-callout: none;

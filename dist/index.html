@@ -3,14 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A hotel booking application for the overlook hotel." />
+  <title>Overlook Hotel</title>
+  <link rel="stylesheet" href="./css/styles.scss">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-  
-  <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
-  <script src="bundle.js"></script>
-
+  <header>
+    <section class="header-wrapper">
+      <h1>Overlook Hotel</h1>
+    </section>
+    <nav>
+      <span class="material-icons-outlined">home</span>
+      <button class="home-button"></button>
+      <button class="booking-button">BOOK YOUR TRIP</button>
+      <!-- LOG-IN INFORMATION <span class="material-icons-outlined">account_circle</span>-->
+    </nav>
+  </header>
+  <main>
+    <article class="customer-details">
+      <h2>Your Trips</h2>
+      <section class="room-display-wrapper">
+        <!-- BOXES GO HERE -->
+      </section>
+    </article>
+  </main>
+  <footer>
+    <h3>Contact Us</h3>
+    <p>info@overlook.hotel</p>
+    <p> 323 Squashomish Sound</p>
+    <p>Vancouver Island</p>
+  </footer>
 </body>
+
 </html>
+  <script src="bundle.js"></script>

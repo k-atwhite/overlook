@@ -5,5 +5,5 @@
 import './css/base.scss';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/background.jpg'
+import '../images/background.jpg'
 

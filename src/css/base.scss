@@ -11,26 +11,32 @@ html {
   background-size: cover;
 }
 
+// header {
+//   display: flex;
+// }
+
 h1 {
+  float: right;
   font-size: 450%;
   font-weight: lighter;
 }
 
 p {
+  float: right;
   font-size: 175%;
   margin-right: 10%;
 }
 
 .header-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: flex-end;
   margin-top: 3%;
   margin-right: 6%;
 }
 
 .tag-line {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   justify-content: flex-end;
 }

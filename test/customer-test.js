@@ -4,8 +4,7 @@ const expect = chai.expect;
 import { testDataCustomer } from './test-data-customer.js';
 import { testDataBooking } from './test-data-booking.js';
 import { testDataRoom } from './test-data-room.js';
-
-import Customer from '../src/Customer';
+import Customer from '../src/customer';
 
 
 describe('Customer', function () {

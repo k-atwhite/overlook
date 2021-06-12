@@ -3,12 +3,42 @@
 }
 
 html {
-  background: url(../images/background.jpg) no-repeat center center fixed; 
+  background: url(../images/background3.jpg) no-repeat center center fixed; 
   font-family: 'Roboto', sans-serif;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+h1 {
+  font-size: 450%;
+  font-weight: lighter;
+}
+
+p {
+  font-size: 175%;
+  margin-right: 10%;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 3%;
+  margin-right: 6%;
+}
+
+.tag-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.customer-details {
+  background: wheat;
+  vh: 34vh;
+  width: 30vw;
 }
 
 

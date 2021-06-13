@@ -46,7 +46,7 @@ p {
   margin-left: 2%;
   position: relative;
   padding: 1% 2%;
-  font-size: 100%;
+  font-size: 120%;
   font-weight: bolder;
   user-select: none;
   display: inline-block;
@@ -56,10 +56,6 @@ p {
   overflow: hidden;
   background: none;
   color: black;
-}
-
-.hidden {
-  display: none;
 }
 
 .book-button{
@@ -88,6 +84,9 @@ p {
   color: white;
 }
 
+.hidden {
+  display: none;
+}
 
 
 

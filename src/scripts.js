@@ -17,7 +17,7 @@ let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
 
 ///// EVENT LISTENERS /////
 window.addEventListener("load", loadData);
-loginSubmitButton.addEventListener("click", validateLogin);
+loginSubmitButton.addEventListener("click", instantiateCustomer);
 
 
 ///// WINDOW LOAD /////
@@ -31,8 +31,8 @@ function loadData() {
 }
 
 
-function validateLogin(e) {
-    e.preventDefault();
+function validateLogin(userID) {
+    // e.preventDefault();
     const username = loginForm.username.value
     const password = loginForm.password.value
     // make this dynamic for each customer
@@ -44,6 +44,13 @@ function validateLogin(e) {
     } else {
         loginErrorMessage.style.opacity = 1
     }
+}
+
+function instantiateCustomer(e) {
+    e.preventDefault();
+    const username = loginForm.username.value
+    const userID =username.substring(username.length - 2)
+    validateLogin(userID)
 }
 
 

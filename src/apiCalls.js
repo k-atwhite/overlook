@@ -56,6 +56,7 @@ const addBooking = (data, userID) => {
 // }
 
 export {
+    fetchAllData,
     fetchCustomerData,
     fetchRoomData,
     fetchBookingData,

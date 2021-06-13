@@ -13,7 +13,7 @@ html {
 
 .header-wrapper {
   float: right;
-  margin: 2% 5%;
+  margin: 2.5% 5%;
 }
 
 h1 {
@@ -32,15 +32,16 @@ p {
 }
 
 .customer-details {
-  // display: flex;
   margin: 5% 10%;
   padding: 2.5%;
-  background: white;
-  height: 50vh;
+  height: 60vh;
   width: 70vw;
+  background-color: rgba(255,255,255,0.6);
+  // box-shadow: 10px 5px 5px darkgray;
 }
 
 .trip-button {
+  font-family: 'Roboto', sans-serif;
   float: right;
   margin-left: 2%;
   position: relative;
@@ -53,31 +54,41 @@ p {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  color: black;}
+  background: none;
+  color: black;
+}
 
 .hidden {
   display: none;
 }
 
 .book-button{
+  font-family: 'Roboto', sans-serif;
   margin: 1.5% 3%;
   padding: 1% 2%;
-  font-size: 200%;
-  // touch-callout: none;
-  user-select: none;
-  display: inline-block;
+  font-size: 125%;
   border: .2em solid;
   position: relative;
   cursor: pointer;
-  overflow: hidden;
-  color: #FFF;
+  color: white;
+  background: none;
 }
 
 .book-button:hover{
-  color: #ff7a59;
-  border: #ff7a59 solid 1px;
   background:#fff;
+  border-color: white;
+  font-weight: bolder;
+  color: black;
 }
+
+.trip-button:hover{
+  background: black;
+  border-color: black;
+  font-weight: bolder;
+  color: white;
+}
+
+
 
 
 

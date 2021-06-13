@@ -3,12 +3,94 @@
 }
 
 html {
-  background: url(../images/background.jpg) no-repeat center center fixed; 
+  background: url(../images/background3.jpg) no-repeat center center fixed; 
   font-family: 'Roboto', sans-serif;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
+.header-wrapper {
+  float: right;
+  margin: 2.5% 5%;
+}
+
+h1 {
+  font-size: 450%;
+  // THIS IS MAKING IT GO TO TWO LINES!!!!
+}
+
+h2 {
+  font-size: 300%;
+  display: inline;
+}
+
+p {
+  position: relative;
+  font-size: 175%;
+}
+
+.customer-details {
+  margin: 5% 10%;
+  padding: 2.5%;
+  height: 60vh;
+  width: 70vw;
+  background-color: rgba(255,255,255,0.6);
+  // box-shadow: 10px 5px 5px darkgray;
+}
+
+.trip-button {
+  font-family: 'Roboto', sans-serif;
+  float: right;
+  margin-left: 2%;
+  position: relative;
+  padding: 1% 2%;
+  font-size: 100%;
+  font-weight: bolder;
+  user-select: none;
+  display: inline-block;
+  border: .2em solid;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background: none;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.book-button{
+  font-family: 'Roboto', sans-serif;
+  margin: 1.5% 3%;
+  padding: 1% 2%;
+  font-size: 125%;
+  border: .2em solid;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  background: none;
+}
+
+.book-button:hover{
+  background:#fff;
+  border-color: white;
+  font-weight: bolder;
+  color: black;
+}
+
+.trip-button:hover{
+  background: black;
+  border-color: black;
+  font-weight: bolder;
+  color: white;
+}
+
+
+
+
+
 
 

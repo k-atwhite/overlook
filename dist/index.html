@@ -26,9 +26,15 @@
   <main>
     <div class="main-page-layout">
       <section class="log-in-wrapper">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="username" placeholder="password">
-        </p>
+        <h2 class="login-header">login</h2>
+        <div class="login-error-message-holder">
+          <p class="login-error-message" id="loginErrorMessage">invalid username <span class="error-message-second-line">and/or password</span></p>
+        </div>
+        <form class="login-form" id="loginForm">
+          <input type="text" name="username" class="login-box" id="loginBox" placeholder="username">
+          <input type="password" name="username" class="login-box" id="passwordBox" placeholder="password">
+          <input type="submit" value="login" class="login-submit-button" id="login-submit-button">
+        </form>
       </section>
       <section class="customer-details-wrapper hidden">
         <!-- <h2 class="user-greeting">Hello Customer</h2> -->

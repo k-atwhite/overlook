@@ -9,10 +9,25 @@ import Room from './room'
 import domUpdates from './dom-updates'
 
 ///// QUERY SELECTORS /////
-
+const loginForm = document.getElementById("loginForm")
+const loginSubmitButton = document.getElementById("login-submit-button")
+const loginErrorMessage = document.getElementById("loginErrorMessage")
 
 ///// EVENT LISTENERS /////
+loginSubmitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value
+    const password = loginForm.password.value
 
+    // make this dynamic for each customer
+    if (username === "customer50" && password === "overlook2021") {
+    // invoke function to show customer homepage
+        alert("You have successfully logged in!")
+        location.reload();
+    } else {
+        loginErrorMessage.style.opacity = 1
+    }
+})
 
 ///// WINDOW LOAD /////
 const loadData = () => {

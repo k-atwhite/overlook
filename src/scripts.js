@@ -9,38 +9,41 @@ import Room from './room'
 import domUpdates from './dom-updates'
 
 ///// QUERY SELECTORS /////
-const loginForm = document.getElementById("loginForm")
-// const usernameInput = document.getElementById("usernameField")
-// const passwordInput = document.getElementById("passwordField")
-const loginSubmitButton = document.getElementById("login-submit-button")
-const loginErrorMessage = document.getElementById("loginErrorMessage")
+let loginWrapper = document.getElementById("loginWrapper")
+let loginForm = document.getElementById("loginForm");
+let loginSubmitButton = document.getElementById("login-submit-button");
+let loginErrorMessage = document.getElementById("loginErrorMessage");
+let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
 
 ///// EVENT LISTENERS /////
-loginSubmitButton.addEventListener("click", (e) => {
+window.addEventListener("load", loadData);
+loginSubmitButton.addEventListener("click", validateLogin);
+
+
+///// WINDOW LOAD /////
+function loadData() {
+    fetchAllData()
+        .then(data => {
+        console.log(data[0])
+        console.log(data[1])
+        console.log(data[2])
+        })
+}
+
+
+function validateLogin(e) {
     e.preventDefault();
     const username = loginForm.username.value
     const password = loginForm.password.value
     // make this dynamic for each customer
     if (username === "customer50" && password === "overlook2021") {
-    // invoke function to show customer homepage
-        alert("You have successfully logged in!")
-        location.reload();
+        // alert("You have successfully logged in!")
+        domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper)
+        let customerName = "ivanka"
+        domUpdates.welcomeCustomer(customerName)
     } else {
         loginErrorMessage.style.opacity = 1
     }
-})
-
-///// WINDOW LOAD /////
-const loadData = () => {
-    fetchAllData()
-        .then(data => {
-            console.log(data[0])
-            console.log(data[1])
-            console.log(data[2])
-        })
 }
-
-window.addEventListener("load", loadData)
-
 
 

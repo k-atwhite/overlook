@@ -25,20 +25,18 @@
   </nav>
   <main>
     <div class="main-page-layout">
-      <section class="log-in-wrapper">
+      <section class="log-in-wrapper" id="loginWrapper">
         <h2 class="login-header">login</h2>
         <div class="login-error-message-holder">
           <p class="login-error-message" id="loginErrorMessage">invalid username <span class="error-message-second-line">and/or password</span></p>
         </div>
-
         <form class="login-form" id="loginForm">
           <input type="text" name="username" id="usernameField" placeholder="username" class="login-box">
           <input type="password" name="password" id="passwordField" class="login-box" placeholder="password">
           <input type="submit" value="Login" id="login-submit-button" class="login-submit-button">
         </form>
-
       </section>
-      <section class="customer-details-wrapper hidden">
+      <section class="customer-details-wrapper hidden" id="customerDetailsWrapper">
         <!-- <h2 class="user-greeting">Hello Customer</h2> -->
         <button class="future-trip-list trip-button">FUTURE TRIPS</button>
         <button class="past-trip-list trip-button">PAST TRIPS</button>

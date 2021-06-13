@@ -24,23 +24,34 @@
     </header>
   </nav>
   <main>
-    <section class="customer-details">
-      <!-- <h2 class="user-greeting">Hello Customer</h2> -->
-      <button class="future-trip-list trip-button">FUTURE TRIPS</button>
-      <button class="past-trip-list trip-button">PAST TRIPS</button>
-      <p class="total-expense">expenditure...$1,248</p>
-      <section class="room-display-wrapper">
-        <!-- BOXES GO HERE -->
+    <div class="main-page-layout">
+      <section class="log-in-wrapper" id="loginWrapper">
+        <h2 class="login-header">login</h2>
+        <div class="login-error-message-holder">
+          <p class="login-error-message" id="loginErrorMessage">invalid username <span class="error-message-second-line">and/or password</span></p>
+        </div>
+        <form class="login-form" id="loginForm">
+          <input type="text" name="username" id="usernameField" placeholder="username" class="login-box">
+          <input type="password" name="password" id="passwordField" class="login-box" placeholder="password">
+          <input type="submit" value="Login" id="login-submit-button" class="login-submit-button">
+        </form>
       </section>
-    </section>
+      <section class="customer-details-wrapper hidden" id="customerDetailsWrapper">
+        <!-- <h2 class="user-greeting">Hello Customer</h2> -->
+        <button class="future-trip-list trip-button">FUTURE TRIPS</button>
+        <button class="past-trip-list trip-button">PAST TRIPS</button>
+        <p class="total-expense">expenditure...$1,248</p>
+        <section class="room-display-wrapper">
+          <!-- BOXES GO HERE -->
+        </section>
+      </section>
+    </div>
   </main>
-  <!-- <footer>
-    <h3>Contact Us</h3>
+  <footer>
     <p>info@overlook.hotel</p>
-    <p> 323 Squashomish Sound</p>
-    <p>Vancouver Island</p>
-  </footer> -->
+    <p>123.456.7890</p>
+    <p> 323 Squashonomish Sound, Vancouver Island, BC V8R 1J8, Canada</p>
+  </footer>
 </body>
-
 </html>
-  <script src="bundle.js"></script>
+<script src="bundle.js"></script>

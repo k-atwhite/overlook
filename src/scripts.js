@@ -78,19 +78,22 @@ function assignCurrentCustomer(customerDataset, userID) {
 
 function fillHotel(roomsDataset) {
     roomsDataset.forEach(room => hotel.push(room))
-    console.log(hotel)
+    // console.log(hotel)
 }
 
 function fillLedger(bookingsDataset) {
     bookingsDataset.forEach(booking => ledger.push(booking))
-    console.log(ledger)
+    // console.log(ledger)
 
 }
 
 function displayCustomerData() {
     currentCustomer.addBooking(ledger)
-    console.log(currentCustomer.bookings)
     currentCustomer.getExpense(hotel)
-    console.log(currentCustomer.totalExpense)
+    let dollars = currentCustomer.totalExpense
+    console.log(dollars)
+    let expenseMessage = ` 
+            <p class="total-expense" id = "totalExpense">You've parted with $${dollars}</p>`
+    document.getElementById("pastTripButton").insertAdjacentHTML("afterend", expenseMessage)
 }
 

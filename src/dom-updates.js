@@ -13,9 +13,16 @@ let domUpdates = {
         element2.classList.toggle('hidden')
     },
 
-    // displayCustomerData() {
-    //     currentCustomer.getExpense()
+    // displayCustomerExpense() {
+    //     let dollars = currentCustomer.getExpense(hotel)
+    //     let expenseMessage = ` 
+    //         <p class="total-expense" id = "totalExpense">You've parted with ${dollars}</p>`
+    //     document.getElementById("customerDetailsWrapper").insertAdjacentHTML("afterbegin", expenseMessage)
     // },
+
+    // displayCustomerBooking() {
+    
+    // }
 }
 
 export default domUpdates;

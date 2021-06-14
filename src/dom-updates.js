@@ -1,3 +1,5 @@
+import Customer from "./customer";
+
 let domUpdates = {
 
     welcomeCustomer(customerName) {
@@ -9,7 +11,11 @@ let domUpdates = {
     toggleHidden(element1, element2) {
         element1.classList.toggle('hidden')
         element2.classList.toggle('hidden')
-    }
+    },
+
+    // displayCustomerData() {
+    //     currentCustomer.getExpense()
+    // },
 }
 
 export default domUpdates;

@@ -16,12 +16,22 @@ let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
 
 ///// EVENT LISTENERS /////
 loginSubmitButton.addEventListener("click", findCustomerFromLogin);
+window.addEventListener("load", onLoad)
 
 ///// GLOBAL VARIABLES /////
 let currentCustomer
+let hotel = []
+let ledger = []
 
 
 ///// EVENT HANDLERS /////
+function onLoad() {
+    fetchAllData()
+        .then(data => {
+            fillHotel(data[1].rooms)
+            fillLedger(data[2].bookings)
+        })
+}
 
 function findCustomerFromLogin(event) {
     event.preventDefault();
@@ -45,7 +55,6 @@ function validateLogin(userID) {
     }
 }
 
-
 function loadData(userID) {
     fetchAllData()
         .then(data => {
@@ -64,5 +73,24 @@ function assignCurrentCustomer(customerDataset, userID) {
     })
     domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper)
     domUpdates.welcomeCustomer(currentCustomer.name)
+    displayCustomerData()
+}
+
+function fillHotel(roomsDataset) {
+    roomsDataset.forEach(room => hotel.push(room))
+    console.log(hotel)
+}
+
+function fillLedger(bookingsDataset) {
+    bookingsDataset.forEach(booking => ledger.push(booking))
+    console.log(ledger)
+
+}
+
+function displayCustomerData() {
+    currentCustomer.addBooking(ledger)
+    console.log(currentCustomer.bookings)
+    currentCustomer.getExpense(hotel)
+    console.log(currentCustomer.totalExpense)
 }
 

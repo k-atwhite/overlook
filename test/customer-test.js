@@ -70,4 +70,69 @@ describe('Customer', function () {
         customer.getExpense(testDataRoom)
         expect(customer.totalExpense).to.equal(866.35);
     });
+
+    it('Should sort bookings by date', () => {
+        customer.addBooking(testDataBooking)
+        customer.sortBookings()
+        expect(customer.bookings).to.deep.equal([
+            {
+                "id": "5fwrgu4i7k55hl6x8",
+                "userID": 1,
+                "date": "2020/01/11",
+                "roomNumber": 20,
+                "roomServiceCharges": []
+            },
+            {
+                "id": "5fwrgu4i7k55hl727",
+                "userID": 1,
+                "date": "2020/01/20",
+                "roomNumber": 22,
+                "roomServiceCharges": []
+            },
+            {
+                "id": "5fwrgu4i7k55hl6t8",
+                "userID": 1,
+                "date": "2020/02/05",
+                "roomNumber": 12,
+                "roomServiceCharges": []
+            }
+        ]);
+    });
+
+    it('Should return past trips', () => {
+        let today = "2020/01/17"
+        customer.addBooking(testDataBooking)
+        customer.returnPastTrips(today)
+        expect(customer.returnPastTrips()).to.deep.equal([
+            {
+                id: '5fwrgu4i7k55hl6x8',
+                userID: 1,
+                date: '2020/01/11',
+                roomNumber: 20,
+                roomServiceCharges: []
+            }
+        ]);
+    });
+
+    it.skip('Should return future trips', () => {
+        let today = "2020/01/17"
+        customer.addBooking(testDataBooking)
+        customer.returnFutureTrips(today)
+        expect(customer.returnFutureTrips()).to.deep.equal([
+            {
+                id: "5fwrgu4i7k55hl6t8",
+                userID: 1,
+                date: "2020/02/05",
+                roomNumber: 12,
+                roomServiceCharges: []
+            },
+            {
+                id: "5fwrgu4i7k55hl727",
+                userID: 1,
+                date: "2020/01/20",
+                roomNumber: 22,
+                roomServiceCharges: []
+            }
+        ]);
+    });
 })

@@ -37,9 +37,10 @@ class Customer {
     }
 
     returnFutureTrips(todayDate) {
-        const pastBookings = this.bookings.filter(booking => {
+        const futureBookings = this.bookings.filter(booking => {
             const tripDate = new Date(booking.date)
             const today = new Date(todayDate)
+
             if (tripDate >= today) {
                 return true
             } else {
@@ -47,8 +48,8 @@ class Customer {
             }
         })
 
-        if (pastBookings.length) {
-            return pastBookings
+        if (futureBookings.length) {
+            return futureBookings
         } else {
             return false
         }

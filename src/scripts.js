@@ -2,11 +2,16 @@
 import './css/base.scss';
 import './images/background3.jpg'
 import './images/bed-icon.png'
+
 import { fetchAllData } from './apiCalls';
 import Booking from './booking';
 import Customer from './customer';
 import Room from './room'
 import domUpdates from './dom-updates'
+
+let dayjs = require('dayjs')
+//import dayjs from 'dayjs' // ES 2015
+dayjs().format()
 
 
 ///// QUERY SELECTORS /////
@@ -31,7 +36,7 @@ pastTripsButton.addEventListener("click", displayPastTrips)
 let currentCustomer
 let hotel = []
 let ledger = []
-
+let today = "'2020-01-15'"
 
 ///// EVENT HANDLERS /////
 function onLoad() {

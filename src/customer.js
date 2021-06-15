@@ -15,13 +15,13 @@ class Customer {
     };
 
     sortBookings = () => {
-        return this.bookings.sort((a, b) => new Date(a.date) = new Date(b-date))
+        this.bookings = this.bookings.sort((a, b) => new Date(a.date) - new Date(b.date))
     }
 
     returnPastTrips(todayDate) {
        const pastBookings =  this.bookings.filter(booking => {
             const tripDate = new Date(booking.date)
-            const today = newDate(todayDate)
+            const today = new Date(todayDate)
             if (tripDate <= today) {
                 return true
             } else {
@@ -39,7 +39,7 @@ class Customer {
     returnFutureTrips(todayDate) {
         const pastBookings = this.bookings.filter(booking => {
             const tripDate = new Date(booking.date)
-            const today = newDate(todayDate)
+            const today = new Date(todayDate)
             if (tripDate >= today) {
                 return true
             } else {

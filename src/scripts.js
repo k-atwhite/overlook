@@ -9,10 +9,6 @@ import Customer from './customer';
 import Room from './room'
 import domUpdates from './dom-updates'
 
-let dayjs = require('dayjs')
-//import dayjs from 'dayjs' // ES 2015
-dayjs().format()
-
 
 ///// QUERY SELECTORS /////
 let loginWrapper = document.getElementById("loginWrapper")
@@ -22,21 +18,25 @@ let loginErrorMessage = document.getElementById("loginErrorMessage");
 let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
 let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
 let pastTripsButton = document.getElementById("pastTripsButton");
-// let futureTripsButton = document.getElementById("futureTripsButton");
+let futureTripsButton = document.getElementById("futureTripsButton");
+let bookButton = document.getElementById("bookButton")
 
 
 ///// EVENT LISTENERS /////
 window.addEventListener("load", onLoad)
 loginSubmitButton.addEventListener("click", findCustomerFromLogin);
 pastTripsButton.addEventListener("click", displayPastTrips)
-// futureTripsButton.addEventListener("click", displayFutureTrips)
+futureTripsButton.addEventListener("click", displayFutureTrips)
+bookButton.addEventListener("click", displayDatePicker)
 
 
 ///// GLOBAL VARIABLES /////
 let currentCustomer
 let hotel = []
 let ledger = []
-let today = "'2020-01-15'"
+let today = "'2020-01-27'"
+const picker = datepicker(selector, options)
+
 
 ///// EVENT HANDLERS /////
 function onLoad() {
@@ -99,9 +99,18 @@ function fillLedger(bookingsDataset) {
 }
 
 function displayPastTrips() {
-    domUpdates.renderPastTrips(roomDisplayWrapper, currentCustomer.bookings)
+    currentCustomer.sortBookings()
+    domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnPastTrips(today))
 }
 
+function displayFutureTrips() {
+    currentCustomer.sortBookings()
+    domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnFutureTrips(today))
+}
+
+function displayDatePicker() {
+    
+}
 
 
 

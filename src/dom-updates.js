@@ -22,7 +22,7 @@ let domUpdates = {
         document.getElementById("pastTripsButton").insertAdjacentHTML("afterend", expenseMessage)
     },
 
-    renderPastTrips(container, bookingData) {
+    renderTrips(container, bookingData) {
         container.innerHTML = ""
         bookingData.forEach(booking => {
             container.innerHTML += ` 

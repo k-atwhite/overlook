@@ -20,6 +20,7 @@ let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
 let pastTripsButton = document.getElementById("pastTripsButton");
 let futureTripsButton = document.getElementById("futureTripsButton");
 let bookButton = document.getElementById("bookButton")
+let datePicker = document.getElementById("datePicker")
 
 
 ///// EVENT LISTENERS /////
@@ -28,6 +29,7 @@ loginSubmitButton.addEventListener("click", findCustomerFromLogin);
 pastTripsButton.addEventListener("click", displayPastTrips)
 futureTripsButton.addEventListener("click", displayFutureTrips)
 bookButton.addEventListener("click", displayDatePicker)
+datePicker.addEventListener("click", showAvailableRooms)
 
 
 ///// GLOBAL VARIABLES /////
@@ -85,7 +87,7 @@ function assignCurrentCustomer(customerDataset, userID) {
          currentCustomer = new Customer(customer)
         }
     })
-    domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper)
+    domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper, bookButton)
     domUpdates.welcomeCustomer(currentCustomer.name)
     domUpdates.displayCustomerData(ledger, hotel, currentCustomer)
 }
@@ -109,8 +111,10 @@ function displayFutureTrips() {
 }
 
 function displayDatePicker() {
-    
+    domUpdates.toggleHidden(customerDetailsWrapper, datePicker)
 }
 
-
+function showAvailableRooms() {
+    
+}
 

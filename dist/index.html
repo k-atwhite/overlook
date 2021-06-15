@@ -17,7 +17,7 @@
           <h1>OVERLOOK HOTEL</h1>
           <p class="tag-line">find your adventure...find your peace</p>
         </div>
-        <button class="book-button" id="bookButton">BOOK YOUR GETAWAY</button>
+        <button class="book-button hidden" id="bookButton">BOOK YOUR GETAWAY</button>
     </header>
   </nav>
   <main>
@@ -34,12 +34,19 @@
         </form>
       </section>
       <section class="customer-details-wrapper hidden" id="customerDetailsWrapper">
-        <!-- IMAGINE GREETING HERE -->
         <button class="future-trip-list trip-button" id="futureTripsButton">FUTURE TRIPS</button>
         <button class="past-trip-list trip-button" id="pastTripsButton">PAST TRIPS</button>
-        <!-- IMAGINE THE EXPENSE HERE -->
         <section class="room-display-wrapper" id="roomDisplayWrapper">
-          <!-- TRIPS GO HERE -->
+        </section>
+      </section>
+      <section class="date-picker-wrapper hidden" id="datePicker">
+        <h3>When would you like to escape?</h3>
+        <input type="date" name="choose-date" id="datePicker" class="date-picker">
+        <section class="room-type-buttons hidden">
+          <input type="checkbox" class="checkbox" id="resedentialSuite" name="resedentialSuite" value="resedentialSuite">RESEDENTIAL SUITE</input>
+          <input type="checkbox" class="checkbox" id="suite" name="suite" value="suite">SUITE</input>
+          <input type="checkbox" class="checkbox" id="singleRoom" name="singleRoom" value="singleRoom">SINGLE ROOM</input>
+          <input type="checkbox" class="checkbox" id="juniorSuite" name="juniorSuite" value="juniorSuite">JUNIOR SUITE</input>
         </section>
       </section>
     </div>

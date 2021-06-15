@@ -8,9 +8,10 @@ let domUpdates = {
         document.querySelector(".customer-details-wrapper").insertAdjacentHTML("afterbegin", welcomeMessage);
     },
 
-    toggleHidden(element1, element2) {
+    toggleHidden(element1, element2, element3) {
         element1.classList.toggle('hidden')
         element2.classList.toggle('hidden')
+        element3.classList.toggle('hidden')
     },
 
     displayCustomerData(ledger, hotel, currentCustomer) {

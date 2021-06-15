@@ -192,6 +192,29 @@ footer {
   width:100%;
 }
 
+.date-picker-wrapper {
+  margin: 5% 10%;
+  padding: 2.5%;
+  min-height: 50vh;
+  width: 70vw;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: block;
+  text-align: center;
+}
+
+.date-picker {
+  margin: 5%;
+}
+
+.checkbox {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+
+
+
+
 .hidden {
   display: none;
 }

@@ -18,6 +18,7 @@
           <p class="tag-line">find your adventure...find your peace</p>
         </div>
         <button class="book-button hidden" id="bookButton">BOOK YOUR GETAWAY</button>
+        <button class="return-to-customer-info hidden" id="returnToCustomerInfo">HOME</button>
     </header>
   </nav>
   <main>
@@ -43,12 +44,12 @@
         <h3>When would you like to escape?</h3>
         <input type="date" id="calendar" value="" name="calendar" required>
         <section class="room-type-choice">
-          <select class='type-filter' name='search' id='typeFilter' required>
-            <option >empty</option>
-            <option value='residential suite'>Residential Suite</option>
-            <option value='junior suite'>Junior Suite</option>
-            <option value='suite'>Suite</option>
-            <option value='single room'>Single Room</option>
+          <select class='type-filter' name='search' id='typeFilter'>
+            <option value='all'>ALL ROOMS</option>
+            <option value='residential suite'>RESIDENTIAL SUITE</option>
+            <option value='junior suite'>JUNIOR SUITE</option>
+            <option value='suite'>SUITE</option>
+            <option value='single room'>SINGLE ROOM</option>
           </select>
           <button class="check-availability-button" id="checkAvailability">CHECK AVAILABILITY</button>
         </section>

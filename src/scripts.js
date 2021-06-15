@@ -135,14 +135,8 @@ function displayDatePicker() {
     calendar.value = today
 }
 
-function findRoomsByType(potentialRooms, type) {
-    let matchedRooms
-    if(type = "all") {
-        matchedRooms = potentialRooms
-    } else {
-        matchedRooms = potentialRooms.filter(room => room.roomType === type)
-    }
-
+function findRoomsByType(potentialRooms) {
+    let matchedRooms = potentialRooms.filter(room => room.roomType === typeFilter.value)
     if(matchedRooms.length) {
         return matchedRooms
     }else {
@@ -160,7 +154,7 @@ function findAvailableRooms() {
 
     let availableRooms = hotel.filter(room => !unBooked.includes(room.number))
 
-    availableRooms = findRoomsByType(availableRooms, typeFilter.value)
+    availableRooms = findRoomsByType(availableRooms)
     
     if (availableRooms.length) {
         domUpdates.renderAvailableRooms(availableRoomDiv, availableRooms)

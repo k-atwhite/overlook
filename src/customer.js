@@ -21,7 +21,7 @@ class Customer {
             this.totalExpense = Number(totalExpenditure.toFixed(2))
             return totalExpenditure
         }, 0)
-    }
+    };
 };
 
 export default Customer;

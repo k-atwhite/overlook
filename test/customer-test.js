@@ -36,8 +36,7 @@ describe('Customer', function () {
     });
 
     it('Should be able to add a booking', () => {
-        customer.addBooking(testDataBooking[0])
-        customer.addBooking(testDataBooking[1])
+        customer.addBooking(testDataBooking)
         expect(customer.bookings).to.deep.equal(
             [
                 {
@@ -53,20 +52,21 @@ describe('Customer', function () {
                     "date": "2020/01/11",
                     "roomNumber": 20,
                     "roomServiceCharges": []
-                }
+                },
+                {
+                    "id": "5fwrgu4i7k55hl727",
+                    "userID": 1,
+                    "date": "2020/01/20",
+                    "roomNumber": 22,
+                    "roomServiceCharges": []
+                },
             ]
         );
     });
 
-    it('Should not add a booking if the userID does not match', () => {
-        customer.addBooking(testDataBooking[3])
-        expect(customer.bookings).to.deep.equal([]);
-    });
 
     it('Should return the total amount paid for all rooms', () => {
-        customer.addBooking(testDataBooking[0])
-        customer.addBooking(testDataBooking[1])
-        customer.addBooking(testDataBooking[2])
+        customer.addBooking(testDataBooking)
         customer.getExpense(testDataRoom)
         expect(customer.totalExpense).to.equal(866.35);
     });

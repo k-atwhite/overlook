@@ -1,11 +1,13 @@
 
 import './css/base.scss';
-import './images/background.jpg'
+import './images/background3.jpg'
+import './images/bed-icon.png'
 import { fetchAllData } from './apiCalls';
 import Booking from './booking';
 import Customer from './customer';
 import Room from './room'
 import domUpdates from './dom-updates'
+
 
 ///// QUERY SELECTORS /////
 let loginWrapper = document.getElementById("loginWrapper")
@@ -13,10 +15,17 @@ let loginForm = document.getElementById("loginForm");
 let loginSubmitButton = document.getElementById("login-submit-button");
 let loginErrorMessage = document.getElementById("loginErrorMessage");
 let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
+let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
+let pastTripsButton = document.getElementById("pastTripsButton");
+// let futureTripsButton = document.getElementById("futureTripsButton");
+
 
 ///// EVENT LISTENERS /////
-loginSubmitButton.addEventListener("click", findCustomerFromLogin);
 window.addEventListener("load", onLoad)
+loginSubmitButton.addEventListener("click", findCustomerFromLogin);
+pastTripsButton.addEventListener("click", displayPastTrips)
+// futureTripsButton.addEventListener("click", displayFutureTrips)
+
 
 ///// GLOBAL VARIABLES /////
 let currentCustomer
@@ -73,27 +82,21 @@ function assignCurrentCustomer(customerDataset, userID) {
     })
     domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper)
     domUpdates.welcomeCustomer(currentCustomer.name)
-    displayCustomerData()
+    domUpdates.displayCustomerData(ledger, hotel, currentCustomer)
 }
 
 function fillHotel(roomsDataset) {
     roomsDataset.forEach(room => hotel.push(room))
-    // console.log(hotel)
 }
 
 function fillLedger(bookingsDataset) {
     bookingsDataset.forEach(booking => ledger.push(booking))
-    // console.log(ledger)
-
 }
 
-function displayCustomerData() {
-    currentCustomer.addBooking(ledger)
-    currentCustomer.getExpense(hotel)
-    let dollars = currentCustomer.totalExpense
-    console.log(dollars)
-    let expenseMessage = ` 
-            <p class="total-expense" id = "totalExpense">You've parted with $${dollars}</p>`
-    document.getElementById("pastTripButton").insertAdjacentHTML("afterend", expenseMessage)
+function displayPastTrips() {
+    domUpdates.renderPastTrips(roomDisplayWrapper, currentCustomer.bookings)
 }
+
+
+
 

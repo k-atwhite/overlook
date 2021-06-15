@@ -39,7 +39,6 @@ const postBooking = (user, dateSelected, roomNum) => {
     })
     .then(() => onLoad())
     .then(() => loadData(user))
-    .then(console.log("did this work?"))
     .catch(err => console.error("There seems to be a problem", err))
 }
 

@@ -18,6 +18,7 @@ let loginForm = document.getElementById("loginForm");
 let loginSubmitButton = document.getElementById("login-submit-button");
 let loginErrorMessage = document.getElementById("loginErrorMessage");
 let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
+let expenseWrapper = document.getElementById("expenseWrapper")
 let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
 let pastTripsButton = document.getElementById("pastTripsButton");
 let futureTripsButton = document.getElementById("futureTripsButton");
@@ -60,11 +61,17 @@ export function onLoad() {
 }
 
 function fillHotel(roomsDataset) {
-    roomsDataset.forEach(room => hotel.push(room))
+    roomsDataset.forEach(room => {
+        const newRoom = new Room(room)
+        hotel.push(newRoom)
+    })
 }
 
 function fillLedger(bookingsDataset) {
-    bookingsDataset.forEach(booking => ledger.push(booking))
+    bookingsDataset.forEach(booking => {
+        const newBooking = new Booking(booking)
+        ledger.push(booking)
+    })
 }
 
 function findCustomerFromLogin(event) {
@@ -109,7 +116,12 @@ function assignCurrentCustomer(customerDataset, userID) {
     domUpdates.toggleHidden(customerDetailsWrapper)
     domUpdates.toggleHidden(bookButton)
     domUpdates.welcomeCustomer(currentCustomer.name)
-    domUpdates.displayCustomerData(ledger, hotel, currentCustomer)
+    domUpdates.displayCustomerData(ledger, hotel, currentCustomer, expenseWrapper)
+
+    domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnPastTrips(today))
+    
+    domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnFutureTrips(today))
+    console.log(currentCustomer.bookings)
 }
 
 function displayPastTrips() {
@@ -125,6 +137,8 @@ function displayFutureTrips() {
 function returnToCustomerPage() {
     domUpdates.toggleHidden(calendarWrapper)
     domUpdates.toggleHidden(customerDetailsWrapper)
+    domUpdates.toggleHidden(bookButton)
+    domUpdates.toggleHidden(returnToCustomerInfo)
 }
 
 function displayDatePicker() {

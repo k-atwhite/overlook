@@ -3,7 +3,9 @@ import './css/base.scss';
 import './images/background3.jpg'
 import './images/bed-icon.png'
 
-import { fetchAllData } from './apiCalls';
+// import { fetchAllData } from './apiCalls';
+import apiCalls from './apiCalls';
+
 import Booking from './booking';
 import Customer from './customer';
 import Room from './room'
@@ -27,6 +29,7 @@ let typeFilter = document.getElementById("typeFilter")
 let returnToCustomerInfo = document.getElementById("returnToCustomerInfo")
 
 
+
 ///// EVENT LISTENERS /////
 window.addEventListener("load", onLoad)
 
@@ -36,6 +39,8 @@ futureTripsButton.addEventListener("click", displayFutureTrips)
 bookButton.addEventListener("click", displayDatePicker)
 checkAvailabilityButton.addEventListener("click", findAvailableRooms)
 returnToCustomerInfo.addEventListener("click", returnToCustomerPage)
+availableRoomDiv.addEventListener("click", addNewBooking)
+
 ///// GLOBAL VARIABLES /////
 let currentCustomer
 let hotel = []
@@ -44,8 +49,8 @@ let today = "2020-01-27"
 
 
 ///// EVENT HANDLERS /////
-function onLoad() {
-    fetchAllData()
+export function onLoad() {
+    apiCalls.fetchAllData()
         .then(data => {
             fillHotel(data[1].rooms)
             fillLedger(data[2].bookings)
@@ -83,7 +88,7 @@ function validateLogin(userID) {
 }
 
 function loadData(userID) {
-    fetchAllData()
+    apiCalls.fetchAllData()
         .then(data => {
         assignCurrentCustomer(data[0].customers, userID)
         // console.log(data[0])
@@ -129,7 +134,6 @@ function displayDatePicker() {
 }
 
 function findRoomsByType(potentialRooms, type) {
-    console.log(type)
     let matchedRooms
     if(type = "all") {
         matchedRooms = potentialRooms
@@ -153,7 +157,6 @@ function findAvailableRooms() {
         }).map(booking => booking.roomNumber)
 
     let availableRooms = hotel.filter(room => !unBooked.includes(room.number))
-    console.log(availableRooms)
 
     availableRooms = findRoomsByType(availableRooms, typeFilter.value)
     
@@ -165,4 +168,12 @@ function findAvailableRooms() {
     }
 }
 
+function addNewBooking(event) {
+    let chosenRoom = event.target.closest("div").id
+    let roomNumber = parseInt(chosenRoom)
+    
+    let reformattedDate = calendar.value.split('-').join('/');
+    let user = currentCustomer.id
 
+    apiCalls.postBooking(user, reformattedDate, roomNumber)
+}

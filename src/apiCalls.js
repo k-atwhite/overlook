@@ -24,42 +24,26 @@ const fetchBookingData = () => {
         .catch(err => console.log(`There seems to be a problem: ${err.message}`))
 }
 
-const addBooking = (data, userID) => {
-
-    const initObj = { userID: userID, date: data.date, roomNumber: data.roomNumber }
-    const init = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(initObj)
-    }
-    return fetch("http://localhost:3001/api/v1/bookings", init)
-        .then(response => response.json())
-        .catch(err => console.log(`There seems to be a problem: ${err.message}`))
-}
-
-const addBooking = (user, dateSelected, roomNum) => {
+const postBooking = (user, dateSelected, roomNum) => {
     return fetch('http://localhost:3001/api/v1/bookings', {
         method: 'POST',
         body: JSON.stringify({
-            userID: user.id,
+            userID: user,
             date: dateSelected,
             roomNumber: roomNum,
-        })
+        }),
         headers: {
             'Content-type': 'application/json'
         }
     })
-    .then(checkForError)
     .then(() => onLoad())
-    .catch(err => console.error("There seems to be a problem": err))
+    .catch(err => console.error("There seems to be a problem", err))
 }
 
-export {
+export default {
     fetchAllData,
     fetchCustomerData,
     fetchRoomData,
     fetchBookingData,
-    addBooking,
+    postBooking,
 };

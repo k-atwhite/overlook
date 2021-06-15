@@ -38,7 +38,7 @@ let domUpdates = {
         container.innerHTML = ""
         roomData.forEach(room => {
             container.innerHTML += `
-               <div class="available-room" id="availableRoom">
+               <div class="available-room" id="${room.number}">
                     <img src="./images/bed-icon.png" alt="bed icon">
                     <p>Room Type: ${room.roomType}</p>
                     <p>Bed size: ${room.bedSize}</p>
@@ -47,6 +47,7 @@ let domUpdates = {
                 </div>
              `
         })
+
     },
 
     renderErrorMessage(container, apology) {
@@ -57,3 +58,5 @@ let domUpdates = {
 }
 
 export default domUpdates;
+
+                    // <button class="add-stay-buttom" id="addStayButton">ADD STAY</button>

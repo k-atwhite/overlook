@@ -20,24 +20,26 @@ let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
 let pastTripsButton = document.getElementById("pastTripsButton");
 let futureTripsButton = document.getElementById("futureTripsButton");
 let bookButton = document.getElementById("bookButton")
-let datePicker = document.getElementById("datePicker")
+let calendar = document.getElementById("calendar")
+let checkAvailabilityButton = document.getElementById("checkAvailability")
+let availableRoomDiv = document.getElementById("availableRooms")
 
 
 ///// EVENT LISTENERS /////
 window.addEventListener("load", onLoad)
+
 loginSubmitButton.addEventListener("click", findCustomerFromLogin);
 pastTripsButton.addEventListener("click", displayPastTrips)
 futureTripsButton.addEventListener("click", displayFutureTrips)
 bookButton.addEventListener("click", displayDatePicker)
-datePicker.addEventListener("click", showAvailableRooms)
+checkAvailabilityButton.addEventListener("click", showAvailableRooms)
 
 
 ///// GLOBAL VARIABLES /////
 let currentCustomer
 let hotel = []
 let ledger = []
-let today = "'2020-01-27'"
-const picker = datepicker(selector, options)
+let today = "2020-01-27"
 
 
 ///// EVENT HANDLERS /////
@@ -47,6 +49,14 @@ function onLoad() {
             fillHotel(data[1].rooms)
             fillLedger(data[2].bookings)
         })
+}
+
+function fillHotel(roomsDataset) {
+    roomsDataset.forEach(room => hotel.push(room))
+}
+
+function fillLedger(bookingsDataset) {
+    bookingsDataset.forEach(booking => ledger.push(booking))
 }
 
 function findCustomerFromLogin(event) {
@@ -87,17 +97,11 @@ function assignCurrentCustomer(customerDataset, userID) {
          currentCustomer = new Customer(customer)
         }
     })
-    domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper, bookButton)
+    domUpdates.toggleHidden(loginWrapper)
+    domUpdates.toggleHidden(customerDetailsWrapper)
+    domUpdates.toggleHidden(bookButton)
     domUpdates.welcomeCustomer(currentCustomer.name)
     domUpdates.displayCustomerData(ledger, hotel, currentCustomer)
-}
-
-function fillHotel(roomsDataset) {
-    roomsDataset.forEach(room => hotel.push(room))
-}
-
-function fillLedger(bookingsDataset) {
-    bookingsDataset.forEach(booking => ledger.push(booking))
 }
 
 function displayPastTrips() {
@@ -111,10 +115,21 @@ function displayFutureTrips() {
 }
 
 function displayDatePicker() {
-    domUpdates.toggleHidden(customerDetailsWrapper, datePicker)
+    domUpdates.toggleHidden(customerDetailsWrapper)
+    domUpdates.toggleHidden(calendarWrapper)
+    calendar.value = today
 }
 
 function showAvailableRooms() {
-    
-}
+    let desiredDate = calendar.value
+    let scrubbedDate = desiredDate.split('-').join('/')
 
+    let unBooked = ledger.filter(booking => {
+        return booking.date === scrubbedDate
+    }).map(booking => booking.roomNumber)
+
+    let availableRooms = hotel.filter(room => !unBooked.includes(room.number))
+
+    domUpdates.renderAvailableRooms(availableRoomDiv, availableRooms)
+
+}

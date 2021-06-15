@@ -192,7 +192,7 @@ footer {
   width:100%;
 }
 
-.date-picker-wrapper {
+.calendar-wrapper {
   margin: 5% 10%;
   padding: 2.5%;
   min-height: 50vh;
@@ -202,16 +202,34 @@ footer {
   text-align: center;
 }
 
-.date-picker {
-  margin: 5%;
+.calendar {
+  margin: 6%
 }
 
 .checkbox {
   margin-left: 3%;
   margin-right: 3%;
+  font-weight: bolder;
 }
 
+.availability-container {
+  display: flex;
+  width: 70vw;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
+.available-room {
+  display: block;
+  background-color: rgba(219,213,189,0.8);
+  margin: 1%;
+  padding: 0.3%;
+  text-align: center;
+  border-radius: 6px;
+  border-width: thin;
+  box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+}
 
 
 

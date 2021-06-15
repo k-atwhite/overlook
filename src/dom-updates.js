@@ -40,6 +40,7 @@ let domUpdates = {
             container.innerHTML += `
                <div class="available-room" id="${room.number}">
                     <img src="./images/bed-icon.png" alt="bed icon">
+                    <p>Room Number: ${room.number}</p>
                     <p>Room Type: ${room.roomType}</p>
                     <p>Bed size: ${room.bedSize}</p>
                     <p>Numer of beds: ${room.numBeds}</p>

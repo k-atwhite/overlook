@@ -27,6 +27,7 @@ let checkAvailabilityButton = document.getElementById("checkAvailability")
 let availableRoomDiv = document.getElementById("availableRooms")
 let typeFilter = document.getElementById("typeFilter")
 let returnToCustomerInfo = document.getElementById("returnToCustomerInfo")
+let bookingThanks = document.getElementById("bookingThanks")
 
 
 
@@ -40,6 +41,7 @@ bookButton.addEventListener("click", displayDatePicker)
 checkAvailabilityButton.addEventListener("click", findAvailableRooms)
 returnToCustomerInfo.addEventListener("click", returnToCustomerPage)
 availableRoomDiv.addEventListener("click", addNewBooking)
+
 
 ///// GLOBAL VARIABLES /////
 let currentCustomer
@@ -87,7 +89,7 @@ function validateLogin(userID) {
     }
 }
 
-function loadData(userID) {
+export function loadData(userID) {
     apiCalls.fetchAllData()
         .then(data => {
         assignCurrentCustomer(data[0].customers, userID)
@@ -171,9 +173,13 @@ function findAvailableRooms() {
 function addNewBooking(event) {
     let chosenRoom = event.target.closest("div").id
     let roomNumber = parseInt(chosenRoom)
-    
+
     let reformattedDate = calendar.value.split('-').join('/');
     let user = currentCustomer.id
 
     apiCalls.postBooking(user, reformattedDate, roomNumber)
+
+    domUpdates.toggleHidden(calendarWrapper)
+    domUpdates.toggleHidden(loginWrapper)
+    domUpdates.toggleHidden(returnToCustomerInfo)
 }

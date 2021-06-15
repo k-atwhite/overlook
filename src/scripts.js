@@ -1,11 +1,13 @@
 
 import './css/base.scss';
-import './images/background.jpg'
+import './images/background3.jpg'
+import './images/bed-icon.png'
 import { fetchAllData } from './apiCalls';
 import Booking from './booking';
 import Customer from './customer';
 import Room from './room'
 import domUpdates from './dom-updates'
+
 
 ///// QUERY SELECTORS /////
 let loginWrapper = document.getElementById("loginWrapper")
@@ -13,15 +15,32 @@ let loginForm = document.getElementById("loginForm");
 let loginSubmitButton = document.getElementById("login-submit-button");
 let loginErrorMessage = document.getElementById("loginErrorMessage");
 let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
+let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
+let pastTripsButton = document.getElementById("pastTripsButton");
+// let futureTripsButton = document.getElementById("futureTripsButton");
+
 
 ///// EVENT LISTENERS /////
+window.addEventListener("load", onLoad)
 loginSubmitButton.addEventListener("click", findCustomerFromLogin);
+pastTripsButton.addEventListener("click", displayPastTrips)
+// futureTripsButton.addEventListener("click", displayFutureTrips)
+
 
 ///// GLOBAL VARIABLES /////
 let currentCustomer
+let hotel = []
+let ledger = []
 
 
 ///// EVENT HANDLERS /////
+function onLoad() {
+    fetchAllData()
+        .then(data => {
+            fillHotel(data[1].rooms)
+            fillLedger(data[2].bookings)
+        })
+}
 
 function findCustomerFromLogin(event) {
     event.preventDefault();
@@ -45,7 +64,6 @@ function validateLogin(userID) {
     }
 }
 
-
 function loadData(userID) {
     fetchAllData()
         .then(data => {
@@ -64,5 +82,21 @@ function assignCurrentCustomer(customerDataset, userID) {
     })
     domUpdates.toggleHidden(loginWrapper, customerDetailsWrapper)
     domUpdates.welcomeCustomer(currentCustomer.name)
+    domUpdates.displayCustomerData(ledger, hotel, currentCustomer)
 }
+
+function fillHotel(roomsDataset) {
+    roomsDataset.forEach(room => hotel.push(room))
+}
+
+function fillLedger(bookingsDataset) {
+    bookingsDataset.forEach(booking => ledger.push(booking))
+}
+
+function displayPastTrips() {
+    domUpdates.renderPastTrips(roomDisplayWrapper, currentCustomer.bookings)
+}
+
+
+
 

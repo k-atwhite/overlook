@@ -6,11 +6,13 @@ class Customer {
         this.totalExpense = 0;
     };
 
-    addBooking = (bookingData) => {
-        if (bookingData.userID === this.id) {
-            this.bookings.push(bookingData)
-        }
-    }
+    addBooking = (bookingData) => { 
+        bookingData.forEach(booking => {
+            if (booking.userID === this.id) {
+                this.bookings.push(booking)
+            }
+        })
+    };
 
     getExpense = (roomData) => {
         return this.bookings.reduce((totalExpenditure, booking) => {
@@ -19,7 +21,7 @@ class Customer {
             this.totalExpense = Number(totalExpenditure.toFixed(2))
             return totalExpenditure
         }, 0)
-    }
+    };
 };
 
 export default Customer;

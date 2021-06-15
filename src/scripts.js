@@ -122,7 +122,13 @@ function displayDatePicker() {
 }
 
 function findRoomsByType(potentialRooms, type) {
-    let matchedRooms = potentialRooms.filter(room => room.roomType === type)
+    console.log(type)
+    let matchedRooms
+    if(type = "all") {
+        matchedRooms = potentialRooms
+    } else {
+        matchedRooms = potentialRooms.filter(room => room.roomType === type)
+    }
 
     if(matchedRooms.length) {
         return matchedRooms
@@ -143,13 +149,11 @@ function findAvailableRooms() {
     console.log(availableRooms)
 
     availableRooms = findRoomsByType(availableRooms, typeFilter.value)
-    console.log(availableRooms)
-    console.log(typeFilter.value)
     
     if (availableRooms.length) {
         domUpdates.renderAvailableRooms(availableRoomDiv, availableRooms)
     } else {
-        let apology = "Please, please, please forgive us! We have no rooms of thsi type available. Please try another date, please!"
+        let apology = "Please, please, please forgive us! We have no rooms of this type available. Please try another date, please!"
         domUpdates.renderErrorMessage(availableRoomDiv, apology)
     }
 }

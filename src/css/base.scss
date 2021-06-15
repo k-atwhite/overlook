@@ -54,6 +54,25 @@ h2 {
   color: black;
 }
 
+.return-to-customer-info {
+  font-family: 'Roboto', sans-serif;
+  margin: 1.5% 3%;
+  padding: 1% 2%;
+  font-size: 125%;
+  border: .2em solid;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  background: none;
+}
+
+.return-to-customer-info:hover{
+  background:#fff;
+  border-color: white;
+  font-weight: bolder;
+  color: black; 
+}
+
 .main-page-layout {
   display: flex;
   justify-content: center;

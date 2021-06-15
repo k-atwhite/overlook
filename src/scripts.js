@@ -24,6 +24,7 @@ let calendar = document.getElementById("calendar")
 let checkAvailabilityButton = document.getElementById("checkAvailability")
 let availableRoomDiv = document.getElementById("availableRooms")
 let typeFilter = document.getElementById("typeFilter")
+let returnToCustomerInfo = document.getElementById("returnToCustomerInfo")
 
 
 ///// EVENT LISTENERS /////
@@ -34,8 +35,7 @@ pastTripsButton.addEventListener("click", displayPastTrips)
 futureTripsButton.addEventListener("click", displayFutureTrips)
 bookButton.addEventListener("click", displayDatePicker)
 checkAvailabilityButton.addEventListener("click", findAvailableRooms)
-
-
+returnToCustomerInfo.addEventListener("click", returnToCustomerPage)
 ///// GLOBAL VARIABLES /////
 let currentCustomer
 let hotel = []
@@ -115,9 +115,16 @@ function displayFutureTrips() {
     domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnFutureTrips(today))
 }
 
+function returnToCustomerPage() {
+    domUpdates.toggleHidden(calendarWrapper)
+    domUpdates.toggleHidden(customerDetailsWrapper)
+}
+
 function displayDatePicker() {
     domUpdates.toggleHidden(customerDetailsWrapper)
     domUpdates.toggleHidden(calendarWrapper)
+    domUpdates.toggleHidden(bookButton)
+    domUpdates.toggleHidden(returnToCustomerInfo)
     calendar.value = today
 }
 

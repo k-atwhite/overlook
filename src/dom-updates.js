@@ -47,6 +47,12 @@ let domUpdates = {
                 </div>
              `
         })
+    },
+
+    renderErrorMessage(container, apology) {
+        container.innerHTML = ""
+        container.innerHTML = `
+        <p>${apology}</p>`
     }
 }
 

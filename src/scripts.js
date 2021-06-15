@@ -130,6 +130,11 @@ function showAvailableRooms() {
 
     let availableRooms = hotel.filter(room => !unBooked.includes(room.number))
 
-    domUpdates.renderAvailableRooms(availableRoomDiv, availableRooms)
+    if(availableRooms.length > 0) {
+        domUpdates.renderAvailableRooms(availableRoomDiv, availableRooms)
+    } else {
+        let apology = "please, please, please forgive us!"
+        domUpdates.renderErrorMessage(availableRooms, apology)
+    }
 
 }

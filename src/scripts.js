@@ -23,6 +23,7 @@ let bookButton = document.getElementById("bookButton")
 let calendar = document.getElementById("calendar")
 let checkAvailabilityButton = document.getElementById("checkAvailability")
 let availableRoomDiv = document.getElementById("availableRooms")
+let typeFilter = document.getElementById("typeFilter")
 
 
 ///// EVENT LISTENERS /////
@@ -32,7 +33,7 @@ loginSubmitButton.addEventListener("click", findCustomerFromLogin);
 pastTripsButton.addEventListener("click", displayPastTrips)
 futureTripsButton.addEventListener("click", displayFutureTrips)
 bookButton.addEventListener("click", displayDatePicker)
-checkAvailabilityButton.addEventListener("click", showAvailableRooms)
+checkAvailabilityButton.addEventListener("click", findAvailableRooms)
 
 
 ///// GLOBAL VARIABLES /////
@@ -120,21 +121,37 @@ function displayDatePicker() {
     calendar.value = today
 }
 
-function showAvailableRooms() {
+function findRoomsByType(potentialRooms, type) {
+    let matchedRooms = potentialRooms.filter(room => room.roomType === type)
+
+    if(matchedRooms.length) {
+        return matchedRooms
+    }else {
+        return false
+    }
+}
+
+function findAvailableRooms() {
     let desiredDate = calendar.value
     let scrubbedDate = desiredDate.split('-').join('/')
 
-    let unBooked = ledger.filter(booking => {
-        return booking.date === scrubbedDate
-    }).map(booking => booking.roomNumber)
+        let unBooked = ledger.filter(booking => {
+            return booking.date === scrubbedDate
+        }).map(booking => booking.roomNumber)
 
     let availableRooms = hotel.filter(room => !unBooked.includes(room.number))
+    console.log(availableRooms)
 
-    if(availableRooms.length > 0) {
+    availableRooms = findRoomsByType(availableRooms, typeFilter.value)
+    console.log(availableRooms)
+    console.log(typeFilter.value)
+    
+    if (availableRooms.length) {
         domUpdates.renderAvailableRooms(availableRoomDiv, availableRooms)
     } else {
-        let apology = "please, please, please forgive us!"
-        domUpdates.renderErrorMessage(availableRooms, apology)
+        let apology = "Please, please, please forgive us! We have no rooms of thsi type available. Please try another date, please!"
+        domUpdates.renderErrorMessage(availableRoomDiv, apology)
     }
-
 }
+
+

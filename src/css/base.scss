@@ -178,20 +178,6 @@ form {
   box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
 }
 
-
-
-footer {
-  font-size: 80%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background:white;
-  height: 5vh;
-  position:absolute;
-  bottom:0;
-  width:100%;
-}
-
 .calendar-wrapper {
   margin: 5% 10%;
   padding: 2.5%;
@@ -204,12 +190,6 @@ footer {
 
 .calendar {
   margin: 6%
-}
-
-.checkbox {
-  margin-left: 3%;
-  margin-right: 3%;
-  font-weight: bolder;
 }
 
 .availability-container {
@@ -229,6 +209,7 @@ footer {
   border-radius: 6px;
   border-width: thin;
   box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+  cursor: pointer;
 }
 
 

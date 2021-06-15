@@ -43,22 +43,20 @@
         <h3>When would you like to escape?</h3>
         <input type="date" id="calendar" value="" name="calendar" required>
         <button class="check-availability-button" id="checkAvailability">CHECK AVAILABILITY</button>
-        <!-- <section class="room-type-buttons">
-          <input type="checkbox" class="checkbox" id="resedentialSuite" name="resedentialSuite" value="resedentialSuite">RESEDENTIAL SUITE</input>
-          <input type="checkbox" class="checkbox" id="suite" name="suite" value="suite">SUITE</input>
-          <input type="checkbox" class="checkbox" id="singleRoom" name="singleRoom" value="singleRoom">SINGLE ROOM</input>
-          <input type="checkbox" class="checkbox" id="juniorSuite" name="juniorSuite" value="juniorSuite">JUNIOR SUITE</input>
-        </section> -->
+        <section class="room-type-choice">
+            <select class='type-filter' name='search' id='typeFilter' required>
+              <option value="all">All Rooms</option>
+              <option value='residential suite'>Residential Suite</option>
+              <option value='junior suite'>Junior Suite</option>
+              <option value='suite'>Suite</option>
+              <option value='single room'>Single Room</option>
+            </select>
+        </section>
         <section class="availability-container" id="availableRooms">
         </section>
       </section>
     </div>
   </main>
-  <!-- <footer>
-    <p>info@overlook.hotel</p>
-    <p>123.456.7890</p>
-    <p> 323 Squashonomish Sound, Vancouver Island, BC V8R 1J8, Canada</p>
-  </footer> -->
 </body>
 </html>
 <script src="bundle.js"></script>

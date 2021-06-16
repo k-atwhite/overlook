@@ -3,7 +3,8 @@ import Customer from "./customer";
 let domUpdates = {
 
     welcomeCustomer(customerName) {
-        let welcomeMessage = `
+        let welcomeMessage = ""
+        welcomeMessage = `
             <h2 class="user-greeting">Welcome ${customerName}</h2>`
         document.querySelector(".customer-details-wrapper").insertAdjacentHTML("afterbegin", welcomeMessage);
     },
@@ -12,16 +13,23 @@ let domUpdates = {
         element1.classList.toggle('hidden')
     },
 
-    displayCustomerData(ledger, hotel, currentCustomer) {
-        currentCustomer.addBooking(ledger);
-        currentCustomer.getExpense(hotel);
+    displayCustomerData(ledger, hotel, currentCustomer, container) {
+        console.log(currentCustomer.bookings.length)
+
+            currentCustomer.addBooking(ledger);
+            currentCustomer.getExpense(hotel);
+
         let dollars = currentCustomer.totalExpense
+
         let expenseMessage = ` 
             <p class="total-expense" id = "totalExpense">You've parted with $${dollars}</p>`
-        document.getElementById("pastTripsButton").insertAdjacentHTML("afterend", expenseMessage)
+        
+        container.innerHTML = ""
+        container.innerHTML = expenseMessage
     },
 
     renderTrips(container, bookingData) {
+        console.log(container)
         container.innerHTML = ""
         bookingData.forEach(booking => {
             container.innerHTML += ` 

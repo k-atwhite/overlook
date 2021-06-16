@@ -1,0 +1,42 @@
+@import '_variables-and-mixins';
+
+.header-wrapper {
+  float: right;
+  margin: 2.5% 5%;
+}
+
+.log-in-wrapper {
+  background-color: $translucent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40%;  
+  width: 40%;
+}
+
+.customer-details-wrapper {
+  margin: 5% 10%;
+  padding: 2.5%;
+  min-height: 50vh;
+  width: 70vw;
+  background-color: $translucent;
+}
+
+.room-display-wrapper {
+  display: flex;
+  width: 70vw;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.calendar-wrapper {
+  margin: 5% 10%;
+  padding: 2.5%;
+  min-height: 50vh;
+  width: 70vw;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: block;
+  text-align: center;
+}

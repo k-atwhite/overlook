@@ -26,7 +26,7 @@ let checkAvailabilityButton = document.getElementById("checkAvailability")
 let availableRoomDiv = document.getElementById("availableRooms")
 let typeFilter = document.getElementById("typeFilter")
 let returnToCustomerInfo = document.getElementById("returnToCustomerInfo")
-// let bookingThanks = document.getElementById("bookingThanks")
+let bookingThanks = document.getElementById("bookingThanks")
 
 
 
@@ -183,4 +183,5 @@ function addNewBooking(event) {
     domUpdates.toggleHidden(calendarWrapper)
     domUpdates.toggleHidden(loginWrapper)
     domUpdates.toggleHidden(returnToCustomerInfo)
+    domUpdates.toggleHidden(bookingThanks)
 }

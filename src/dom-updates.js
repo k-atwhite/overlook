@@ -1,11 +1,9 @@
 let domUpdates = {
-
-    // Add to container and set container to NIL rather than the welcome message itself
-    welcomeCustomer(customerName) {
-        let welcomeMessage = ""
-        welcomeMessage = `
+    welcomeCustomer(container, customerName) {
+        container.innerHTML = ""
+        let welcomeMessage = `
             <h2 class="user-greeting">Welcome ${customerName}</h2>`
-        document.querySelector(".customer-details-wrapper").insertAdjacentHTML("afterbegin", welcomeMessage);
+        container.innerHTML = welcomeMessage
     },
 
     toggleHidden(element1) {
@@ -13,10 +11,8 @@ let domUpdates = {
     },
 
     displayCustomerData(ledger, hotel, currentCustomer, container) {
-        console.log(1, currentCustomer.bookings)
             currentCustomer.addBooking(ledger);
             currentCustomer.getExpense(hotel);
-        console.log(2, currentCustomer.bookings)
 
         let dollars = currentCustomer.totalExpense
 
@@ -28,7 +24,6 @@ let domUpdates = {
     },
 
     renderTrips(container, bookingData) {
-        console.log(3, container)
         container.innerHTML = ""
         bookingData.forEach(booking => {
             container.innerHTML += ` 

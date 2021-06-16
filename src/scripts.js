@@ -15,6 +15,7 @@ let loginForm = document.getElementById("loginForm");
 let loginSubmitButton = document.getElementById("login-submit-button");
 let loginErrorMessage = document.getElementById("loginErrorMessage");
 let customerDetailsWrapper = document.getElementById("customerDetailsWrapper");
+let welcomeMessageWrapper = document.getElementById("welcomeMessageWrapper")
 let expenseWrapper = document.getElementById("expenseWrapper")
 let roomDisplayWrapper = document.getElementById("roomDisplayWrapper");
 let pastTripsButton = document.getElementById("pastTripsButton");
@@ -51,9 +52,7 @@ let today = "2020-01-27"
 ///// EVENT HANDLERS /////
 export function onLoad() {
     hotel = []
-    console.log(hotel)
     ledger = []
-    console.log(ledger)
     apiCalls.fetchAllData()
         .then(data => {
             fillHotel(data[1].rooms)
@@ -66,7 +65,6 @@ function fillHotel(roomsDataset) {
         const newRoom = new Room(room)
         hotel.push(newRoom)
     })
-    console.log(hotel)
 }
 
 function fillLedger(bookingsDataset) {
@@ -74,7 +72,6 @@ function fillLedger(bookingsDataset) {
         const newBooking = new Booking(booking)
         ledger.push(newBooking)
     })
-    console.log(ledger)
 }
 
 function findCustomerFromLogin(event) {
@@ -116,7 +113,7 @@ function assignCurrentCustomer(customerDataset, userID) {
     domUpdates.toggleHidden(customerDetailsWrapper)
     domUpdates.toggleHidden(bookButton)
 
-    domUpdates.welcomeCustomer(currentCustomer.name)
+    domUpdates.welcomeCustomer(welcomeMessageWrapper, currentCustomer.name)
     domUpdates.displayCustomerData(ledger, hotel, currentCustomer, expenseWrapper)
 }
 

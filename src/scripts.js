@@ -115,13 +115,14 @@ function assignCurrentCustomer(customerDataset, userID) {
     domUpdates.toggleHidden(loginWrapper)
     domUpdates.toggleHidden(customerDetailsWrapper)
     domUpdates.toggleHidden(bookButton)
+
     domUpdates.welcomeCustomer(currentCustomer.name)
     domUpdates.displayCustomerData(ledger, hotel, currentCustomer, expenseWrapper)
 
-    domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnPastTrips(today))
+    // domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnPastTrips(today))
     
-    domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnFutureTrips(today))
-    console.log(currentCustomer.bookings)
+    // domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnFutureTrips(today))
+    // console.log(currentCustomer.bookings)
 }
 
 function displayPastTrips() {

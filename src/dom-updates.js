@@ -3,7 +3,8 @@ import Customer from "./customer";
 let domUpdates = {
 
     welcomeCustomer(customerName) {
-        let welcomeMessage = `
+        let welcomeMessage = ""
+        welcomeMessage = `
             <h2 class="user-greeting">Welcome ${customerName}</h2>`
         document.querySelector(".customer-details-wrapper").insertAdjacentHTML("afterbegin", welcomeMessage);
     },
@@ -14,10 +15,9 @@ let domUpdates = {
 
     displayCustomerData(ledger, hotel, currentCustomer, container) {
         console.log(currentCustomer.bookings.length)
-        if (!currentCustomer.bookings.length) {
+
             currentCustomer.addBooking(ledger);
             currentCustomer.getExpense(hotel);
-        }
 
         let dollars = currentCustomer.totalExpense
 
@@ -29,6 +29,7 @@ let domUpdates = {
     },
 
     renderTrips(container, bookingData) {
+        console.log(container)
         container.innerHTML = ""
         bookingData.forEach(booking => {
             container.innerHTML += ` 

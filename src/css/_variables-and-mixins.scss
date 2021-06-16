@@ -1,0 +1,34 @@
+$translucent: rgba(255,255,255,0.6);
+$mainFont: 'Roboto', sans-serif;
+$boxShadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+$cardColor: rgba(219,213,189,0.8);
+
+
+@mixin buttonHoverState() {
+    background:#fff;
+    border-color: white;
+    font-weight: bolder;
+    color: black;
+}
+
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flexColumnSpaceEvently() {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin flexRowSpaceAround() {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@mixin flexAlignCenter() {
+    align-items: center;
+    display: flex;
+}

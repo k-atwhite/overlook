@@ -29,7 +29,7 @@ class Customer {
             }
         })
 
-        if (pastBookings.length) {
+        if (pastBookings.length > 0) {
             return pastBookings
         } else {
             return false

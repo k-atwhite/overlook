@@ -99,7 +99,7 @@ describe('Customer', function () {
         ]);
     });
 
-    it('Should return past trips', () => {
+    it.skip('Should return past trips', () => {
         let today = "2020/01/17"
         customer.addBooking(testDataBooking)
         customer.returnPastTrips(today)

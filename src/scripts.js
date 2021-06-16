@@ -2,10 +2,7 @@
 import './css/base.scss';
 import './images/background3.jpg'
 import './images/bed-icon.png'
-
-// import { fetchAllData } from './apiCalls';
 import apiCalls from './apiCalls';
-
 import Booking from './booking';
 import Customer from './customer';
 import Room from './room'
@@ -100,9 +97,6 @@ export function loadData(userID) {
     apiCalls.fetchAllData()
         .then(data => {
         assignCurrentCustomer(data[0].customers, userID)
-        // console.log(data[0])
-        // console.log(data[1])
-        // console.log(data[2])
         })
 }
 
@@ -118,11 +112,6 @@ function assignCurrentCustomer(customerDataset, userID) {
 
     domUpdates.welcomeCustomer(currentCustomer.name)
     domUpdates.displayCustomerData(ledger, hotel, currentCustomer, expenseWrapper)
-
-    // domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnPastTrips(today))
-    
-    // domUpdates.renderTrips(roomDisplayWrapper, currentCustomer.returnFutureTrips(today))
-    // console.log(currentCustomer.bookings)
 }
 
 function displayPastTrips() {

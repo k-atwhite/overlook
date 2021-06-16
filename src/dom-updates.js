@@ -1,10 +1,9 @@
 let domUpdates = {
-
-    welcomeCustomer(customerName) {
-        let welcomeMessage = ""
-        welcomeMessage = `
+    welcomeCustomer(container, customerName) {
+        container.innerHTML = ""
+        let welcomeMessage = `
             <h2 class="user-greeting">Welcome ${customerName}</h2>`
-        document.querySelector(".customer-details-wrapper").insertAdjacentHTML("afterbegin", welcomeMessage);
+        container.innerHTML = welcomeMessage
     },
 
     toggleHidden(element1) {

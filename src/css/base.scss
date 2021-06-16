@@ -29,6 +29,13 @@ h2 {
   position: relative;
 }
 
+.booking-thanks {
+  font-size: 125%;
+  font-weight: bolder;
+  font-style: italic;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 
 .main-page-layout {
   @include flexAlignCenter();

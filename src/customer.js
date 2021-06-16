@@ -19,7 +19,8 @@ class Customer {
     }
 
     returnPastTrips(todayDate) {
-       const pastBookings =  this.bookings.filter(booking => {
+        let pastBookings = []
+        pastBookings =  this.bookings.filter(booking => {
             const tripDate = new Date(booking.date)
             const today = new Date(todayDate)
             if (tripDate <= today) {

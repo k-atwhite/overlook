@@ -25,7 +25,7 @@ let checkAvailabilityButton = document.getElementById("checkAvailability")
 let availableRoomDiv = document.getElementById("availableRooms")
 let typeFilter = document.getElementById("typeFilter")
 let returnToCustomerInfo = document.getElementById("returnToCustomerInfo")
-let bookingThanks = document.getElementById("bookingThanks")
+// let bookingThanks = document.getElementById("bookingThanks")
 
 
 
@@ -50,6 +50,10 @@ let today = "2020-01-27"
 
 ///// EVENT HANDLERS /////
 export function onLoad() {
+    hotel = []
+    console.log(hotel)
+    ledger = []
+    console.log(ledger)
     apiCalls.fetchAllData()
         .then(data => {
             fillHotel(data[1].rooms)
@@ -62,13 +66,15 @@ function fillHotel(roomsDataset) {
         const newRoom = new Room(room)
         hotel.push(newRoom)
     })
+    console.log(hotel)
 }
 
 function fillLedger(bookingsDataset) {
     bookingsDataset.forEach(booking => {
         const newBooking = new Booking(booking)
-        ledger.push(booking)
+        ledger.push(newBooking)
     })
+    console.log(ledger)
 }
 
 function findCustomerFromLogin(event) {

@@ -33,6 +33,7 @@ h2 {
 .main-page-layout {
   @include flexAlignCenter();
   flex-direction: row;
+  flex-wrap: wrap;
   height: 75vh;
   justify-content: center;
   width: 100%;

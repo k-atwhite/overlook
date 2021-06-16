@@ -135,7 +135,6 @@ form {
 
   h2 {
     font-size: 250%;
-    margin-bottom: 5%
   }
 
   .tag-line {
@@ -157,20 +156,69 @@ form {
     height: 15vh;
   }
 
-
-  header {
-    margin: 20px;
+  .customer-details-wrapper {
+    margin-top: 5px
   }
 
-  .book-button {
-    
+  .main-page-layout {
+    flex-wrap: wrap;
   }
 
 }
 
-
 /* mobile */
 @media screen and (max-width: 500px) {
+
+ h1 {
+    color: white;
+    font-size: 300%;
+  }
+
+  .tag-line {
+    display: none;
+  }
+
+  h2 {
+    font-size: 150%;
+  }
+
+  .trip-button {
+    font-size: 70%;
+  }
+
+   .trip-box {
+    width: 75vw;
+    height: 25vh;
+  }
+
+  .available-room {
+    width: 75vw;
+    height: 30vh;
+}
+
+  .login-box {
+    height: 3vh;
+    width: 25vw;
+    font-size: 100%;
+  }
+
+  .login-header {
+    margin-top: 10px;
+  }
+
+  .main-page-layout {
+    flex-wrap: wrap;
+  }
+
+.book-button{
+  background: white;
+  color: black;
+}
+
+.return-to-customer-info {
+  background: white;
+  color: black;
+}
 
 }
 

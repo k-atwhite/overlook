@@ -1,5 +1,3 @@
-import Customer from "./customer";
-
 let domUpdates = {
 
     welcomeCustomer(customerName) {
@@ -14,8 +12,6 @@ let domUpdates = {
     },
 
     displayCustomerData(ledger, hotel, currentCustomer, container) {
-        console.log(currentCustomer.bookings.length)
-
             currentCustomer.addBooking(ledger);
             currentCustomer.getExpense(hotel);
 
@@ -29,7 +25,6 @@ let domUpdates = {
     },
 
     renderTrips(container, bookingData) {
-        console.log(container)
         container.innerHTML = ""
         bookingData.forEach(booking => {
             container.innerHTML += ` 
@@ -67,5 +62,3 @@ let domUpdates = {
 }
 
 export default domUpdates;
-
-                    // <button class="add-stay-buttom" id="addStayButton">ADD STAY</button>

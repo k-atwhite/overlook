@@ -23,7 +23,7 @@
 
 
 ## Project Overview & User Stories
-Overlook Hotel is a Vanilla JS application that showcases what we have learned during Module 2 of Turing's Front End program. The user can log into their account, view their past and future stays at Overlook, chekc to see what rooms are availabel for specific dates, filter by room types, and book their stay!
+Overlook Hotel is a Vanilla JS application that showcases what we have learned during Module 2 of Turing's Front End program. The user can log into their account, view their past and future stays at Overlook, check to see what rooms are availabel for specific dates, filter by room types, and book their stay!
 
 ## How to use the app
 ### Server Setup
